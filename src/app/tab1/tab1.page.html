@@ -11,5 +11,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-button *ngIf="authenticated === false" (click)="loginClicked()">Login</ion-button>
+  <ion-button *ngIf="authenticated" (click)="logoutClicked()">Logout</ion-button>
+  <div *ngIf="userName">Currently logged in as: {{userName}}</div>
 </ion-content>
