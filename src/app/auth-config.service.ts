@@ -12,11 +12,11 @@ export class AuthConfigService {
     const isNative = isAndroid || isIos;
     return {
       authConfig: 'azure',
-      clientID: 'ba594fcc-3d50-4844-bd94-75290a305c0b',
+      clientID: '9a8d6b59-d8cd-48dc-b166-7f14851dbe2a',
       discoveryUrl:
-        'https://login.microsoftonline.com/20f8e206-5bfd-4085-9ab0-9e2fca01f2a4/v2.0/.well-known/openid-configuration',
+        'https://dtjacdemo.b2clogin.com/dtjacdemo.onmicrosoft.com/B2C_1_signin/v2.0/.well-known/openid-configuration',
       scope:
-        'openid offline_access email profile https://dtjacdemo.onmicrosoft.com/ba594fcc-3d50-4844-bd94-75290a305c0b/test.it',
+        'openid offline_access email profile https://dtjacdemo.onmicrosoft.com/9a8d6b59-d8cd-48dc-b166-7f14851dbe2a/Open.Read',
       audience: '',
       redirectUri: isAndroid
         ? 'msauth://io.ionic.gettingstartedacangular/lvGC0B4SWYU8tNPHg%2FbdMjQinZQ%3D'
