@@ -30,6 +30,11 @@ export class Tab1Page implements OnInit {
     this.checkAuth();
   }
 
+  async refreshClicked() {
+    await this.auth.refreshSession();
+    this.checkAuth();
+  }
+
   private async checkAuth() {
     this.authenticated = await this.auth.isAuthenticated();
     this.userName = await this.auth.getUserName();
