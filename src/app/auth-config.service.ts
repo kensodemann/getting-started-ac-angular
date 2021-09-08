@@ -7,7 +7,9 @@ import { Platform } from '@ionic/angular';
 })
 export class AuthConfigService {
   get config(): IonicAuthOptions {
-    const isNative = this.platform.is('hybrid');
+    const isAndroid = this.platform.is('android');
+    const isIos = this.platform.is('ios');
+    const isNative = isAndroid || isIos;
     return {
       authConfig: 'azure',
       clientID: 'ba594fcc-3d50-4844-bd94-75290a305c0b',
@@ -16,11 +18,15 @@ export class AuthConfigService {
       scope:
         'openid offline_access email profile https://dtjacdemo.onmicrosoft.com/ba594fcc-3d50-4844-bd94-75290a305c0b/test.it',
       audience: '',
-      redirectUri: isNative
+      redirectUri: isAndroid
         ? 'msauth://io.ionic.gettingstartedacangular/lvGC0B4SWYU8tNPHg%2FbdMjQinZQ%3D'
+        : isIos
+        ? 'msauth.io.ionic.gettingstartedacangular://auth'
         : 'http://localhost:8100/tabs/tab1',
       logoutUrl: isNative
         ? 'msauth://io.ionic.gettingstartedacangular/lvGC0B4SWYU8tNPHg%2FbdMjQinZQ%3D'
+        : isIos
+        ? 'msauth.io.ionic.gettingstartedacangular://auth'
         : 'http://localhost:8100/tabs/tab1',
       platform: isNative ? 'capacitor' : 'web',
       iosWebView: isNative ? 'private' : undefined,
