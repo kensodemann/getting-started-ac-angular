@@ -13,5 +13,8 @@
 
   <ion-button *ngIf="authenticated === false" (click)="loginClicked()">Login</ion-button>
   <ion-button *ngIf="authenticated" (click)="logoutClicked()">Logout</ion-button>
-  <div *ngIf="userName">Currently logged in as: {{userName}}</div>
+  <div *ngIf="userName">
+    <div>Currently logged in as: {{userName}}</div>
+    <ion-button (click)="refreshClicked()">Refresh</ion-button>
+  </div>
 </ion-content>
