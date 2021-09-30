@@ -32,6 +32,7 @@ export class AuthConfigService {
       iosWebView: isNative ? 'private' : undefined,
       androidToolbarColor: isNative ? '#4424eb' : undefined,
       logLevel: 'DEBUG',
+      webAuthFlow: 'PKCE',
     };
   }
 
